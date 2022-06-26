@@ -1,0 +1,174 @@
+metadata:
+  creationTimestamp: "2022-06-25T15:01:56Z"
+  generation: 617
+  managedFields:
+  - apiVersion: argoproj.io/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        .: {}
+        f:destination:
+          .: {}
+          f:namespace: {}
+          f:server: {}
+        f:project: {}
+        f:source:
+          .: {}
+          f:path: {}
+          f:repoURL: {}
+        f:syncPolicy:
+          .: {}
+          f:automated: {}
+      f:status:
+        .: {}
+        f:health:
+          .: {}
+          f:status: {}
+        f:history: {}
+        f:operationState:
+          .: {}
+          f:finishedAt: {}
+          f:message: {}
+          f:operation:
+            .: {}
+            f:initiatedBy:
+              .: {}
+              f:automated: {}
+            f:retry:
+              .: {}
+              f:limit: {}
+            f:sync:
+              .: {}
+              f:revision: {}
+          f:phase: {}
+          f:startedAt: {}
+          f:syncResult:
+            .: {}
+            f:resources: {}
+            f:revision: {}
+            f:source:
+              .: {}
+              f:path: {}
+              f:repoURL: {}
+        f:reconciledAt: {}
+        f:resources: {}
+        f:sourceType: {}
+        f:summary:
+          .: {}
+          f:images: {}
+        f:sync:
+          .: {}
+          f:comparedTo:
+            .: {}
+            f:destination:
+              .: {}
+              f:namespace: {}
+              f:server: {}
+            f:source:
+              .: {}
+              f:path: {}
+              f:repoURL: {}
+          f:revision: {}
+          f:status: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2022-06-26T20:41:24Z"
+  name: ml-twitter
+  namespace: argocd
+  resourceVersion: "3615648"
+  uid: 1274294f-827e-4bf5-b31e-3c2b9faba175
+spec:
+  destination:
+    namespace: lucasaguiar
+    server: https://kubernetes.default.svc
+  project: lucasaguiar-project
+  source:
+    path: .
+    repoURL: https://github.com/nuttka/cc-argocd-files
+  syncPolicy:
+    automated: {}
+status:
+  health:
+    status: Healthy
+  history:
+  - deployStartedAt: "2022-06-25T19:21:55Z"
+    deployedAt: "2022-06-25T19:22:00Z"
+    id: 0
+    revision: fb6e1bf4f2a4f70838c577db3a712a060b9191de
+    source:
+      path: .
+      repoURL: https://github.com/nuttka/cc-argocd-files
+  - deployStartedAt: "2022-06-26T20:41:19Z"
+    deployedAt: "2022-06-26T20:41:24Z"
+    id: 1
+    revision: f19d412613a3b8e0c0304b480eb7ee4ff2159e6d
+    source:
+      path: .
+      repoURL: https://github.com/nuttka/cc-argocd-files
+  operationState:
+    finishedAt: "2022-06-26T20:41:24Z"
+    message: successfully synced (all tasks run)
+    operation:
+      initiatedBy:
+        automated: true
+      retry:
+        limit: 5
+      sync:
+        revision: f19d412613a3b8e0c0304b480eb7ee4ff2159e6d
+    phase: Succeeded
+    startedAt: "2022-06-26T20:41:19Z"
+    syncResult:
+      resources:
+      - group: ""
+        hookPhase: Running
+        kind: Service
+        message: service/ml-twitter-service unchanged
+        name: ml-twitter-service
+        namespace: lucasaguiar
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: apps
+        hookPhase: Running
+        kind: Deployment
+        message: deployment.apps/ml-twitter-deployment configured
+        name: ml-twitter-deployment
+        namespace: lucasaguiar
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      revision: f19d412613a3b8e0c0304b480eb7ee4ff2159e6d
+      source:
+        path: .
+        repoURL: https://github.com/nuttka/cc-argocd-files
+  reconciledAt: "2022-06-26T20:41:24Z"
+  resources:
+  - health:
+      status: Healthy
+    kind: Service
+    name: ml-twitter-service
+    namespace: lucasaguiar
+    status: Synced
+    version: v1
+  - group: apps
+    health:
+      status: Healthy
+    kind: Deployment
+    name: ml-twitter-deployment
+    namespace: lucasaguiar
+    status: Synced
+    version: v1
+  sourceType: Directory
+  summary:
+    images:
+    - nutka/lucasaguiar-ml_twitter:0.2
+  sync:
+    comparedTo:
+      destination:
+        namespace: lucasaguiar
+        server: https://kubernetes.default.svc
+      source:
+        path: .
+        repoURL: https://github.com/nuttka/cc-argocd-files
+    revision: f19d412613a3b8e0c0304b480eb7ee4ff2159e6d
+    status: Synced

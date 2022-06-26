@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ml-twitter-service
+spec:
+  selector:
+    app: ml-twitter
+  ports:
+    - protocol: TCP
+      port: 5019
+      targetPort: 5000
